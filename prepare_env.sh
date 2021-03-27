@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install bc
-npm install -g git-credential-env
+sudo npm install -g git-credential-env
 
 it config credential.helper "env --username=GIT_USER --password=GIT_PASS"
 
