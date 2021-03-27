@@ -1,0 +1,40 @@
+name: "Build Kernel"
+
+on:
+  schedule:
+    - cron: "0 22 1 * *"  # scheduled at 06:00 (UTC+8) every month
+  workflow_dispatch:
+
+env:
+  RUN_ENV: 'prod'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          # ref: master
+
+      - name: Cache build cache
+        id: cache-out
+        uses: actions/cache@v2
+        with:
+           path: out
+           key: ${{ runner.os }}-out
+
+      - name: Install dependencies
+        run: |
+          chmod +x prepare_env.sh
+          chmod +x variants_build.sh
+          ./prepare_env.sh
+
+      - name: Compile Kernel
+        env:
+          BOTTOKEN: ${{ secrets.BOTTOKEN }}
+          CHATID: ${{ secrets.CHATID }}
+        run: ./variants_build.sh
