@@ -1,0 +1,33 @@
+kind: pipeline
+name: Surya_bleed
+
+platform:
+  os: linux
+  arch: amd64
+
+clone:
+  depth: 1
+
+steps:
+  - name: setup&bleed
+    image: ubuntu:latest
+    environment:
+      BOTTOKEN:
+        from_secret: token
+      CHATID:
+        from_secret: chat_id
+      GIT_USER:
+        from_secret: user
+      GIT_PASS:
+        from_secret: pass
+      LOC1:
+        from_secret: location
+      BR1:
+        from_secret: br
+    commands:
+      - apt update && apt-get install -y build-essential bc python curl git zip ftp libssl-dev lftp zstd wget libfl-dev flex bison cpio device-tree-compiler
+      - chmod +x prepare_env.sh
+      - bash prepare_env.sh
+      - chmod +x variants_build.sh
+      - bash variants_build.sh
+
