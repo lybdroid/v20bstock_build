@@ -2,4 +2,3 @@
 
 cd kernel
 ./kramel.sh
-
