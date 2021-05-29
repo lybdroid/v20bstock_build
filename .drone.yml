@@ -25,7 +25,7 @@ steps:
       BR1:
         from_secret: br
     commands:
-      - apt update && apt-get install -y make python2 bc python curl git zip ftp libssl-dev lftp zstd wget libfl-dev flex bison cpio device-tree-compiler
+      - 
       - chmod +x prepare_env.sh
       - bash prepare_env.sh
       - chmod +x variants_build.sh
