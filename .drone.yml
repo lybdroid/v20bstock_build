@@ -25,7 +25,6 @@ steps:
       BR1:
         from_secret: br
     commands:
-      - 
       - chmod +x prepare_env.sh
       - bash prepare_env.sh
       - chmod +x variants_build.sh
