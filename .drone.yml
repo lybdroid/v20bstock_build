@@ -25,6 +25,7 @@ steps:
       BR1:
         from_secret: br
     commands:
+      - apt update && apt-get install -y git
       - chmod +x prepare_env.sh
       - bash prepare_env.sh
       - chmod +x variants_build.sh
