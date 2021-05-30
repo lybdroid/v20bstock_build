@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd kernel
-./kramel.sh
+./kramel_gcc.sh
