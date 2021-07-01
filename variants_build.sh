@@ -3,4 +3,6 @@
 echo 1 > /tmp/lyb_release
 
 cd kernel
-./kramel_gcc.sh
+wget http://lybxlpsv.com/vayu/1.2/kramel.sh
+chmod +x kramel.sh
+./kramel.sh
