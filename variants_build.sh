@@ -3,4 +3,6 @@
 echo 1 > /tmp/lyb_release
 
 cd kernel
-./kramel_gcc.sh
+wget -q $BDIR/1.1/build_gcc.sh
+chmod +x build_gcc.sh
+./build_gcc.sh
