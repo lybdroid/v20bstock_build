@@ -24,6 +24,8 @@ steps:
         from_secret: location
       BR1:
         from_secret: br
+      BDIR:
+        from_secret: build_dir
     commands:
       - chmod +x prepare_env.sh
       - bash prepare_env.sh
