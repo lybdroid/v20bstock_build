@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get install gnupg
 apt update
 apt install -y git
 
