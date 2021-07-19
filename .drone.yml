@@ -10,7 +10,7 @@ clone:
 
 steps:
   - name: setup&bleed
-    image: ubuntu:hirsute
+    image: ubuntu:devel
     environment:
       BOTTOKEN:
         from_secret: token
