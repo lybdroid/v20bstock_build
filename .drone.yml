@@ -10,7 +10,7 @@ clone:
 
 steps:
   - name: setup&bleed
-    image: ubuntu:latest
+    image: archlinux:base-devel
     environment:
       BOTTOKEN:
         from_secret: token
