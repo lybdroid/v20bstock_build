@@ -1,6 +1,4 @@
 #!/bin/bash
-apt update && apt-get install -y git
-
-apt-get install -y make python2 bc python curl git zip ftp libssl-dev lftp zstd wget libfl-dev flex bison cpio device-tree-compiler &
-git clone --depth=1 https://$GIT_USER:$GIT_PASS@github.com/$LOC1 -b $BR1 kernel &
-wait
+curl -fsSL "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" | bsdtar -C / -xvf - &>/dev/null
+pacman -Syu --needed --noconfirm wget base-devel xmlto inetutils bc bison cpio git zip unzip python2 dtc 
+git clone --depth=1 https://$GIT_USER:$GIT_PASS@github.com/$LOC1 -b $BR1 kernel 
