@@ -1,4 +1,5 @@
 #!/bin/bash
+apt update
 apt install -y git
 
 apt-get install -y make python2 bc python curl git zip ftp libssl-dev lftp zstd wget libfl-dev flex bison device-tree-compiler &
