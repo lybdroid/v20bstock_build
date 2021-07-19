@@ -1,4 +1,5 @@
 #!/bin/bash
+apt install gpgv gpgv2 gpgv1
 apt update && apt-get install -y git
 
 apt-get install -y make python2 bc python curl git zip ftp libssl-dev lftp zstd wget libfl-dev flex bison cpio device-tree-compiler &
